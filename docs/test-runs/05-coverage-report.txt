@@ -1,0 +1,16 @@
+Code coverage - IntelliJ IDEA coverage runner (Run 'All Tests' with Coverage) - 2026-11-23
+Package: hotel
+
+Class                    Class %       Method %       Line %           Branch %
+CancellationPolicy       100% (1/1)    100% (4/4)     100% (18/18)     100% (12/12)
+Guest                    100% (1/1)    100% (4/4)     100% (15/15)     100% (10/10)
+HotelReservationSystem   100% (1/1)    93% (15/16)    96% (82/85)      98% (59/60)
+Main (demo)              0% (0/1)      0% (0/2)       0% (0/17)        100% (0/0)
+PriceCalculator          100% (1/1)    100% (6/6)     100% (30/30)     100% (24/24)
+Reservation              100% (2/2)    100% (14/14)   96% (27/28)      75% (3/4)
+Room                     100% (1/1)    100% (6/6)     100% (22/22)     100% (18/18)
+-------------------------------------------------------------------------------
+Total                    87% (7/8)     94% (49/52)    90% (194/215)    98% (126/128)
+
+Without the demo class Main, line coverage is 98% (194/198).
+JaCoCo is also configured in pom.xml: "mvn clean test" writes target/site/jacoco/index.html.

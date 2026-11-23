@@ -1,0 +1,30 @@
+Manual mutation analysis - 2026-11-18 - version v2
+Each mutant = one small deliberate bug in the source code. The full test suite (151 test executions)
+was run against each mutant. KILLED = at least one test failed (the bug was detected).
+
+ID   File                        Change                                                    Result
+M01  CancellationPolicy.java     >= 48h  ->  > 48h                                          KILLED (1 failing)  TC-C01 2026-12-08T14:00 -> 100%
+M02  CancellationPolicy.java     >= 24h  ->  > 24h                                          KILLED (1 failing)  TC-C01 2026-12-09T14:00 -> 50%
+M03  CancellationPolicy.java     !now.isBefore(checkIn)  ->  now.isAfter(checkIn)           KILLED (1 failing)  TC-C02 2026-12-10T14:00 not allowed
+M04  PriceCalculator.java        20% discount cap removed                                   KILLED (2 failing)  TC-P04 nights=14, loyalty=true -> 20%
+M05  PriceCalculator.java        nights >= 14  ->  nights > 14                              KILLED (2 failing)  TC-P06 14 nights -> 1258.00
+M06  PriceCalculator.java        nights >= 7   ->  nights > 7                               KILLED (3 failing)  TC-P06 7 nights -> 666.00
+M07  PriceCalculator.java        weekend = Friday  ->  weekend = Sunday                     KILLED (5 failing)  TC-P06 6 nights -> 640.00
+M08  PriceCalculator.java        HALF_UP  ->  HALF_EVEN                                     KILLED (1 failing)  TC-P08 9.045 -> 9.05
+M09  HotelReservationSystem.java nights > 30  ->  nights >= 30                              KILLED (1 failing)  TC-H07 30 nights accepted
+M10  HotelReservationSystem.java checkIn < today  ->  checkIn <= today                      KILLED (2 failing)  TC-H05 / TC-H30
+M11  HotelReservationSystem.java max advance 365  ->  364 days                              KILLED (1 failing)  TC-H06 365 days accepted
+M12  HotelReservationSystem.java guests > capacity  ->  guests >= capacity                  KILLED (2 failing)  TC-H16 rule 1
+M13  HotelReservationSystem.java overlap check includes touching dates                      KILLED (2 failing)  TC-H13 starts on previous check-out day
+M14  HotelReservationSystem.java cancelled reservations still block the room                KILLED (1 failing)  TC-H15 cancelled reservation frees room
+M15  HotelReservationSystem.java wrong variable in overlap check                            KILLED (5 failing)  TC-H21 rule 6
+M16  Room.java                   roomNumber > 9999  ->  roomNumber >= 9999                  KILLED (1 failing)  TC-RM01 valid room number 9999
+M17  Room.java                   decimals counted without stripTrailingZeros()              KILLED (1 failing)  TC-RM08 trailing zeros
+M18  Guest.java                  length > 50  ->  length >= 50                              KILLED (1 failing)  TC-G05 50 accepted, 51 rejected
+M19  Guest.java                  name not trimmed                                           KILLED (1 failing)  TC-G06 trimming
+M20  HotelReservationSystem.java reservation never stored                                   KILLED (13 failing) TC-H28 cancelling twice
+
+Mutation score: 20 / 20 killed (100%)
+Note: 12 of the 20 mutants (M01, M02, M03, M05, M06, M09, M10, M11, M12, M16, M18, plus M13) are
+"off-by-one" boundary changes. Each was detected by exactly the boundary value test written for it,
+and typically by only 1-2 tests - an equivalence-partition test alone would not have caught them.

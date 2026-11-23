@@ -1,0 +1,169 @@
+Run date: 2026-11-18 | openjdk version "21.0.13.0.3" 2026-10-24 | JUnit 5.12.2
+Version: v2 (final)
+
+PASS GuestTest > TC-G05 BVA name length: 50 accepted, 51 rejected
+PASS GuestTest > TC-G01 valid name "Ali"
+PASS GuestTest > TC-G01 valid name "Ay?e Y?lmaz"
+PASS GuestTest > TC-G01 valid name "?a?r? ?zt?rk"
+PASS GuestTest > TC-G01 valid name "Jean-Luc"
+PASS GuestTest > TC-G01 valid name "O'Brien"
+PASS GuestTest > TC-G01 valid name "Al"
+PASS GuestTest > TC-G03 invalid characters "12345"
+PASS GuestTest > TC-G03 invalid characters "Ali3"
+PASS GuestTest > TC-G03 invalid characters "Ali@Veli"
+PASS GuestTest > TC-G03 invalid characters "Ay?e_Y?lmaz"
+PASS GuestTest > TC-G03 invalid characters "Bob!"
+PASS GuestTest > TC-G06 surrounding spaces are trimmed before validation
+PASS GuestTest > TC-G02 blank name "null"
+PASS GuestTest > TC-G02 blank name ""
+PASS GuestTest > TC-G02 blank name "   "
+PASS GuestTest > TC-G02 blank name "	"
+PASS GuestTest > TC-G07 loyalty flag is stored; default is not a member
+PASS GuestTest > TC-G04 BVA name length: 1 rejected, 2 accepted
+PASS PriceCalculatorTest > TC-P11 check-out on or before check-in is rejected
+PASS PriceCalculatorTest > TC-P10 null price or dates are rejected
+PASS PriceCalculatorTest > TC-P08 half-cent is rounded up (9.045 -> 9.05)
+PASS PriceCalculatorTest > TC-P07 50.05 x 3 nights is exactly 150.15
+PASS PriceCalculatorTest > TC-P09 result always has two decimals
+PASS PriceCalculatorTest > TC-P05 invalid number of nights 0
+PASS PriceCalculatorTest > TC-P05 invalid number of nights -1
+PASS PriceCalculatorTest > TC-P06 BVA 6 nights from Monday -> 640.00
+PASS PriceCalculatorTest > TC-P06 BVA 7 nights from Monday -> 666.00
+PASS PriceCalculatorTest > TC-P06 BVA 13 nights from Monday -> 1242.00
+PASS PriceCalculatorTest > TC-P06 BVA 14 nights from Monday -> 1258.00
+PASS PriceCalculatorTest > TC-P04 nights=1, loyalty=false -> 0%
+PASS PriceCalculatorTest > TC-P04 nights=6, loyalty=false -> 0%
+PASS PriceCalculatorTest > TC-P04 nights=1, loyalty=true -> 10%
+PASS PriceCalculatorTest > TC-P04 nights=6, loyalty=true -> 10%
+PASS PriceCalculatorTest > TC-P04 nights=7, loyalty=false -> 10%
+PASS PriceCalculatorTest > TC-P04 nights=13, loyalty=false -> 10%
+PASS PriceCalculatorTest > TC-P04 nights=7, loyalty=true -> 20%
+PASS PriceCalculatorTest > TC-P04 nights=13, loyalty=true -> 20%
+PASS PriceCalculatorTest > TC-P04 nights=14, loyalty=false -> 15%
+PASS PriceCalculatorTest > TC-P04 nights=30, loyalty=false -> 15%
+PASS PriceCalculatorTest > TC-P04 nights=14, loyalty=true -> 20%
+PASS PriceCalculatorTest > TC-P04 nights=30, loyalty=true -> 20%
+PASS PriceCalculatorTest > TC-P01 three weekday nights have no surcharge
+PASS PriceCalculatorTest > TC-P03 night on 2026-12-10 costs 100.00
+PASS PriceCalculatorTest > TC-P03 night on 2026-12-11 costs 120.00
+PASS PriceCalculatorTest > TC-P03 night on 2026-12-12 costs 120.00
+PASS PriceCalculatorTest > TC-P03 night on 2026-12-13 costs 100.00
+PASS PriceCalculatorTest > TC-P02 Thursday-Sunday: Friday and Saturday cost 20% more
+PASS RoomTest > TC-RM05 valid price 0.01
+PASS RoomTest > TC-RM05 valid price 0.02
+PASS RoomTest > TC-RM05 valid price 100
+PASS RoomTest > TC-RM05 valid price 100.5
+PASS RoomTest > TC-RM05 valid price 99999.99
+PASS RoomTest > TC-RM05 valid price 100000.00
+PASS RoomTest > TC-RM06 invalid price -100
+PASS RoomTest > TC-RM06 invalid price -0.01
+PASS RoomTest > TC-RM06 invalid price 0
+PASS RoomTest > TC-RM06 invalid price 0.00
+PASS RoomTest > TC-RM06 invalid price 100000.01
+PASS RoomTest > TC-RM06 invalid price 1E+10
+PASS RoomTest > TC-RM08 trailing zeros are not counted as extra decimals
+PASS RoomTest > TC-RM07 too many decimals 10.005
+PASS RoomTest > TC-RM07 too many decimals 0.001
+PASS RoomTest > TC-RM07 too many decimals 99.999
+PASS RoomTest > TC-RM09 null price is rejected
+PASS RoomTest > TC-RM03 valid capacity 1
+PASS RoomTest > TC-RM03 valid capacity 2
+PASS RoomTest > TC-RM03 valid capacity 5
+PASS RoomTest > TC-RM03 valid capacity 6
+PASS RoomTest > TC-RM04 invalid capacity -1
+PASS RoomTest > TC-RM04 invalid capacity 0
+PASS RoomTest > TC-RM04 invalid capacity 7
+PASS RoomTest > TC-RM04 invalid capacity 100
+PASS RoomTest > TC-RM01 valid room number 1
+PASS RoomTest > TC-RM01 valid room number 2
+PASS RoomTest > TC-RM01 valid room number 500
+PASS RoomTest > TC-RM01 valid room number 9998
+PASS RoomTest > TC-RM01 valid room number 9999
+PASS RoomTest > TC-RM02 invalid room number -2147483648
+PASS RoomTest > TC-RM02 invalid room number -1
+PASS RoomTest > TC-RM02 invalid room number 0
+PASS RoomTest > TC-RM02 invalid room number 10000
+PASS RoomTest > TC-RM02 invalid room number 2147483647
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-01T10:00 -> 100% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-08T13:59 -> 100% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-08T14:00 -> 100% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-08T14:01 -> 50% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-09T02:00 -> 50% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-09T13:59 -> 50% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-09T14:00 -> 50% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-09T14:01 -> 0% refund
+PASS CancellationPolicyTest > TC-C01 cancel at 2026-12-10T13:59 -> 0% refund
+PASS CancellationPolicyTest > TC-C04 null arguments are rejected
+PASS CancellationPolicyTest > TC-C03 refund amount: 100%, 50% and 0% of 333.33
+PASS CancellationPolicyTest > TC-C02 cancel at 2026-12-10T14:00 is not allowed
+PASS CancellationPolicyTest > TC-C02 cancel at 2026-12-10T14:01 is not allowed
+PASS CancellationPolicyTest > TC-C02 cancel at 2026-12-12T09:00 is not allowed
+PASS HotelReservationSystemTest > TC-H31 unknown room or invalid dates are reported as not available
+PASS HotelReservationSystemTest > TC-H28 cancelling twice is rejected
+PASS HotelReservationSystemTest > TC-H26 cancelling 9 days before check-in refunds 100%
+PASS HotelReservationSystemTest > TC-H27 cancelling 36 hours before check-in refunds 50%
+PASS HotelReservationSystemTest > TC-H29 cancelling an unknown reservation is rejected
+PASS HotelReservationSystemTest > TC-H30 cancelling on the check-in day after 14:00 is rejected
+PASS HotelReservationSystemTest > TC-H23 total price is stored on the reservation (loyalty member)
+PASS HotelReservationSystemTest > TC-H24 IDs are sequential: R0001, R0002
+PASS HotelReservationSystemTest > TC-H25 price quote for unknown room is rejected
+PASS HotelReservationSystemTest > TC-H20 rule 5: too many guests -> rejected
+PASS HotelReservationSystemTest > TC-H21 rule 6: room not available -> rejected with IllegalStateException
+PASS HotelReservationSystemTest > TC-H19 rule 4: invalid dates -> rejected
+PASS HotelReservationSystemTest > TC-H18 rule 3: unknown room -> rejected
+PASS HotelReservationSystemTest > TC-H16 rule 1: all conditions true -> reservation created
+PASS HotelReservationSystemTest > TC-H22 nothing is stored when a reservation is rejected
+PASS HotelReservationSystemTest > TC-H17 rule 2: no guest -> rejected
+PASS HotelReservationSystemTest > TC-H13 starts on previous check-out day: 2026-12-15 -> 2026-12-17 accepted
+PASS HotelReservationSystemTest > TC-H13 ends on existing check-in day: 2026-12-08 -> 2026-12-10 accepted
+PASS HotelReservationSystemTest > TC-H13 completely before: 2026-12-03 -> 2026-12-06 accepted
+PASS HotelReservationSystemTest > TC-H13 completely after: 2026-12-20 -> 2026-12-22 accepted
+PASS HotelReservationSystemTest > TC-H12 same dates: 2026-12-10 -> 2026-12-15 rejected
+PASS HotelReservationSystemTest > TC-H12 overlaps the start: 2026-12-08 -> 2026-12-11 rejected
+PASS HotelReservationSystemTest > TC-H12 overlaps the end: 2026-12-14 -> 2026-12-17 rejected
+PASS HotelReservationSystemTest > TC-H12 inside existing stay: 2026-12-11 -> 2026-12-13 rejected
+PASS HotelReservationSystemTest > TC-H12 contains existing stay: 2026-12-08 -> 2026-12-17 rejected
+PASS HotelReservationSystemTest > TC-H12 last night only: 2026-12-14 -> 2026-12-15 rejected
+PASS HotelReservationSystemTest > TC-H14 same dates in a different room are accepted
+PASS HotelReservationSystemTest > TC-H15 cancelled reservation frees the room (B8)
+PASS HotelReservationSystemTest > TC-H10 room 102 (capacity 4), 1 guest(s) accepted
+PASS HotelReservationSystemTest > TC-H10 room 102 (capacity 4), 2 guest(s) accepted
+PASS HotelReservationSystemTest > TC-H10 room 102 (capacity 4), 3 guest(s) accepted
+PASS HotelReservationSystemTest > TC-H10 room 102 (capacity 4), 4 guest(s) accepted
+PASS HotelReservationSystemTest > TC-H11 room 102 (capacity 4), -1 guest(s) rejected
+PASS HotelReservationSystemTest > TC-H11 room 102 (capacity 4), 0 guest(s) rejected
+PASS HotelReservationSystemTest > TC-H11 room 102 (capacity 4), 5 guest(s) rejected
+PASS HotelReservationSystemTest > TC-H05 check-in today is accepted, yesterday is rejected (B3)
+PASS HotelReservationSystemTest > TC-H07 1 night(s) accepted
+PASS HotelReservationSystemTest > TC-H07 2 night(s) accepted
+PASS HotelReservationSystemTest > TC-H07 29 night(s) accepted
+PASS HotelReservationSystemTest > TC-H07 30 night(s) accepted
+PASS HotelReservationSystemTest > TC-H08 -1 night(s) rejected
+PASS HotelReservationSystemTest > TC-H08 0 night(s) rejected
+PASS HotelReservationSystemTest > TC-H08 31 night(s) rejected
+PASS HotelReservationSystemTest > TC-H08 60 night(s) rejected
+PASS HotelReservationSystemTest > TC-H06 check-in 365 days ahead accepted, 366 rejected (B4)
+PASS HotelReservationSystemTest > TC-H09 null dates are rejected
+PASS HotelReservationSystemTest > TC-H02 null room is rejected
+PASS HotelReservationSystemTest > TC-H01 duplicate room number is rejected
+PASS HotelReservationSystemTest > TC-H04 null clock is rejected
+PASS HotelReservationSystemTest > TC-H03 returned room list cannot be modified from outside
+PASS DefectRegressionTest > DEF-01 check-in date in the past must be rejected
+PASS DefectRegressionTest > DEF-03 invalid prices (NaN, Infinity, huge values) must be rejected
+PASS DefectRegressionTest > DEF-02 stays longer than 30 nights must be rejected
+PASS DefectRegressionTest > DEF-04 50.05 x 3 nights must be exactly 150.15 (no floating-point error)
+
+Test run finished after 521 ms
+[        44 containers found      ]
+[         0 containers skipped    ]
+[        44 containers started    ]
+[         0 containers aborted    ]
+[        44 containers successful ]
+[         0 containers failed     ]
+[       151 tests found           ]
+[         0 tests skipped         ]
+[       151 tests started         ]
+[         0 tests aborted         ]
+[       151 tests successful      ]
+[         0 tests failed          ]
+
